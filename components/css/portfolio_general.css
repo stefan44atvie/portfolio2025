@@ -1,0 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#portfolio_startscreen {
+  height: 100dvh;
+  width: 100vw;
+  background-color: aqua;
+  position: relative;
+}
+#portfolio_startscreen #pf_starttext1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#portfolio_startscreen #pf_starttext2 {
+  position: absolute;
+  width: 100%;
+  left: 40%;
+  top: 60%;
+  transform: translate(-30%, -50%);
+}
+#portfolio_startscreen #cta_button {
+  position: absolute;
+  float: right;
+  top: 95%;
+  left: 80%;
+}
+
+#portfolio_projects {
+  height: 100dvh;
+  background-color: bisque;
+}/*# sourceMappingURL=portfolio_general.css.map */
