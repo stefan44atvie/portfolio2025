@@ -16,22 +16,80 @@
     }
     #pf_starttext2{
         position: absolute;
-        width:100%;
-        left: 40%;
-        top: 60%;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-30%, -50%);
+        // width:100%;
+        display:flex;
+        // margin: 0 auto;
+        
+        left: 20%;
+        top: 55%;
+        // padding-right:15dvw;
+        // -webkit-transform: translate(-50%, -50%);
+        // transform: translate(-50%, -50%);
+        // word-break: normal;
     }
     #cta_button{
         position:absolute;
-        float:right;
-        // bottom:0;
-        top:95%;
-        left:80%;
-        // justify-content: center;
+        display:flex;
+        align-items: center;
+        justify-content: end;
+        padding-right:1dvw;
+
+    //     // float:right;
+    //     // bottom:0;
+        top:90%;
+        // float:right;
+        // left:80%;
+
+    //     // justify-content: center;
     }
 }
 #portfolio_projects{
     height:100dvh;
     background-color: bisque;
+}
+#portfolio_offers{
+    height:100dvh;
+    // background-color: burlywood;
+
+    .offers_content{
+        margin-left: auto;
+        margin-right:auto;
+        width:75%;
+        display:grid;
+        grid-template-columns: 49% 49%;
+        gap:10px;
+
+        #box_fullstack{
+            grid-column: 1/span 1;
+            // background-color: lightcoral;
+        }
+        #box_socialmedia{
+            grid-column: 2/spoan 1;
+            // background-color: lightcyan;
+        }
+        #box_photo{
+            grid-column: 1/span 2;
+            // background-color: lightgreen;
+        }
+    }
+}
+#portfolio_myskills{
+    height:100dvh;
+    background-color: chartreuse;
+}
+#portfolio_aboutme{
+    height:100dvh;
+    background-color: cyan;
+}
+#portfolio_contact{
+    height:100dvh;
+    background-color: darkgray;
+}
+
+.portfolio_tile{
+    padding-top:10dvh;
+    text-align:center;
+}
+.portfolio_text{
+    text-align: center;
 }

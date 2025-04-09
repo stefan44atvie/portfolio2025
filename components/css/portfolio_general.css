@@ -17,19 +17,65 @@
 }
 #portfolio_startscreen #pf_starttext2 {
   position: absolute;
-  width: 100%;
-  left: 40%;
-  top: 60%;
-  transform: translate(-30%, -50%);
+  display: flex;
+  left: 20%;
+  top: 55%;
 }
 #portfolio_startscreen #cta_button {
   position: absolute;
-  float: right;
-  top: 95%;
-  left: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-right: 1dvw;
+  top: 90%;
 }
 
 #portfolio_projects {
   height: 100dvh;
   background-color: bisque;
+}
+
+#portfolio_offers {
+  height: 100dvh;
+}
+#portfolio_offers .offers_content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  display: grid;
+  grid-template-columns: 49% 49%;
+  gap: 10px;
+}
+#portfolio_offers .offers_content #box_fullstack {
+  grid-column: 1/span 1;
+}
+#portfolio_offers .offers_content #box_socialmedia {
+  grid-column: 2/spoan 1;
+}
+#portfolio_offers .offers_content #box_photo {
+  grid-column: 1/span 2;
+}
+
+#portfolio_myskills {
+  height: 100dvh;
+  background-color: chartreuse;
+}
+
+#portfolio_aboutme {
+  height: 100dvh;
+  background-color: cyan;
+}
+
+#portfolio_contact {
+  height: 100dvh;
+  background-color: darkgray;
+}
+
+.portfolio_tile {
+  padding-top: 10dvh;
+  text-align: center;
+}
+
+.portfolio_text {
+  text-align: center;
 }/*# sourceMappingURL=portfolio_general.css.map */
