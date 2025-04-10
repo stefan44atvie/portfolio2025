@@ -6,7 +6,6 @@
 #portfolio_startscreen {
   height: 100dvh;
   width: 100vw;
-  background-color: aqua;
   position: relative;
 }
 #portfolio_startscreen #pf_starttext1 {
@@ -34,6 +33,21 @@
   height: 100dvh;
   background-color: bisque;
 }
+#portfolio_projects #projects_area {
+  margin: auto;
+  width: 100%;
+  height: 70dvh;
+  background-color: blue;
+  padding-left: 20px;
+  display: grid;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  gap: 5px;
+}
+#portfolio_projects #projects_area .portfolio_project {
+  width: 85%;
+  border: 2px solid black;
+  height: 30dvh;
+}
 
 #portfolio_offers {
   height: 100dvh;
@@ -58,24 +72,113 @@
 
 #portfolio_myskills {
   height: 100dvh;
-  background-color: chartreuse;
+}
+#portfolio_myskills .skills_content {
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  gap: 25px;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+#portfolio_myskills .skills_content .skillbox {
+  width: 100%;
+  border: 1px solid black;
+  height: 15dvh;
+  padding-left: 15px;
+  position: relative;
+}
+#portfolio_myskills .skills_content .skillbox .skill_image {
+  margin: 0;
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+}
+#portfolio_myskills .skills_content .skillbox .skill_text {
+  padding-top: 2dvh;
+  margin: 0;
+  position: absolute;
+  top: 70%;
+  transform: translateY(-50%);
 }
 
 #portfolio_aboutme {
   height: 100dvh;
-  background-color: cyan;
+}
+#portfolio_aboutme #pf_aboutarea {
+  display: grid;
+  padding-top: 10dvh;
+  grid-template-columns: 50% 50%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+#portfolio_aboutme #pf_aboutarea #personal_box {
+  grid-column: 1/span 1;
+  padding: 10px;
+  margin-top: 40px;
+  width: 92%;
+  margin-left: 10%;
+  height: 40dvh;
+  background: hsla(0, 17%, 93%, 0.65);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  z-index: 3;
+}
+#portfolio_aboutme #pf_aboutarea #personal_image {
+  grid-column: 2/span 1;
+  width: 70%;
+  height: 70%;
+  rotate: 15deg;
+  margin-left: -10%;
+  z-index: 0;
+  /* background-color: aquamarine; */
+}
+#portfolio_aboutme #pf_aboutarea #personal_image img {
+  border-radius: 25px;
 }
 
-#portfolio_contact {
+#portfolio_impressum {
   height: 100dvh;
-  background-color: darkgray;
+}
+#portfolio_impressum #impressum_box {
+  grid-column: 1/span 1;
+  padding: 10px;
+  width: 92%;
+  margin-left: 10%;
+  height: 65dvh;
+  background: hsla(0, 17%, 93%, 0.65);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  z-index: 3;
+  margin: auto;
+  margin-top: 50px;
+  width: 50%;
+  padding: 10px;
+  overflow: scroll;
 }
 
-.portfolio_tile {
+.portfolio_title {
   padding-top: 10dvh;
   text-align: center;
 }
 
 .portfolio_text {
   text-align: center;
+}
+
+.box_shadow {
+  box-shadow: 0 12px 16px 0 rgba(95, 73, 235, 0.24), 0 17px 50px 0 rgba(72, 170, 245, 0.19);
+}
+
+.box_shadow:hover {
+  box-shadow: 0 12px 30px 0 rgba(26, 5, 180, 0.24), 0 17px 50px 0 rgba(57, 4, 182, 0.19);
+}
+
+.nav-link {
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+/* ---- Modal Body ---- */
+.projectimages {
+  padding-bottom: 15px !important;
 }/*# sourceMappingURL=portfolio_general.css.map */

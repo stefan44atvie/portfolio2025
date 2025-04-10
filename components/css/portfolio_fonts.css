@@ -13,6 +13,27 @@
   font-size: large;
   color: black;
   text-decoration: none;
+  text-transform: lowercase;
+}
+
+.pf_text_projects {
+  font-size: large;
+  color: black;
+  text-decoration: none;
+}
+
+.pf_text_impressum {
+  font-size: large;
+  color: black;
+  text-align: left !important;
+  text-decoration: none;
+}
+
+.pf_text_abme {
+  font-size: medium;
+  color: black;
+  text-decoration: none;
+  text-transform: lowercase;
 }
 
 .box_title {
@@ -21,6 +42,43 @@
   letter-spacing: 0.1em;
 }
 
+.impressum_title {
+  color: blue;
+  text-align: left;
+  letter-spacing: 0.1em;
+}
+
 a:link {
   text-decoration: none;
+}
+
+.myskills_text {
+  color: black;
+  text-decoration: none;
+  font-size: medium;
+}
+
+.nav-link:focus {
+  color: blue !important;
+  font-weight: bold !important;
+}
+
+.nav-link:active {
+  color: blue !important;
+  font-weight: bold;
+}
+
+.nav-link.active {
+  color: blue !important;
+  font-weight: bold;
+  border-bottom: 1px solid blue;
+}
+
+.blue_contact {
+  color: blue;
+  text-decoration: none;
+}
+
+.bold_text {
+  font-weight: bold;
 }/*# sourceMappingURL=portfolio_fonts.css.map */
