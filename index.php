@@ -22,7 +22,8 @@
   <link rel="stylesheet" href="components/css/portfolio_general.css">
   <link rel="stylesheet" href="components/css/portfolio_fonts.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-<!-- /* Google tag (gtag.js) */
+    <!-- CSS Files Links -->
+  <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5DCMVFF9F1"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -31,7 +32,7 @@
 
     gtag('config', 'G-5DCMVFF9F1');
     </script>
- /* Google tag (gtag.js) */ -->
+ <!-- Google tag (gtag.js) -->
 
   <!-- Title -->
   <title>My Agency 2025</title>
@@ -64,19 +65,19 @@
         </div>     
         <div class="offers_content">
             <div id="box_fullstack">
-                <h3 class="box_title">Fullstack Webdevelopment</h3>
+                <h5 class="box_title">Fullstack Webdevelopment</h5>
                 <p class="pf_text">
                 The forthcoming website will meet all the necessary requirements and can be displayed on all mobile devices.
                 </p>
             </div>
             <div id="box_socialmedia">
-                <h3 class="box_title">Social Media Management</h3>
+                <h5 class="box_title">Social Media Management</h5>
                 <p class="pf_text">
                 Digitale Seele assumes control of the playback of Texts and Media through various Social Media Platforms.
                 </p>
             </div>
             <div id="box_photo">
-                <h3 class="box_title">Photographer</h3>
+                <h5 class="box_title">Photographer</h5>
                 <p class="pf_text">
                     If required, I can personally capture all the necessary images for your website using my own equipment. You can view my photographic work on <a href="https://www.sfr-fotografie.at" target="_blank">this website</a>. All the images on this website were taken by me.                
                 </p>
@@ -180,37 +181,132 @@
             </h4>
         </div>
         <div id="projects_area">
-            <div class="portfolio_project">
+            <div class="portfolio_project box_shadow">
                 <div class="projectintro_image text-center">
                     <img src="components/media/projectimages/w4_25_1.jpg" class="img-fluid" width="200" alt="Portalbild 1">
                 </div>
+                <div class="intro_project">
+                    <p class="pf_text text-center">
+                        <h6 class="box_title">Upgraded <a href="https://w4tour.at">w4tour</a>-members' area</h6>
+                    </p>
+                </div>
+                <div class="project_date">
+                    <a class="intro_projectdate">March 2025</a>
+                </div>
                 <button type="button" class="btn btn-primary mx-auto d-block" data-bs-toggle="modal" data-bs-target="#w4tourproject1">
-                        Zu den Projektdetails...
+                        read more...
                 </button>
             </div>
-            <div class="portfolio_project">
-                <button type="button" class="btn btn-primary mx-auto d-block" data-bs-toggle="modal" data-bs-target="#projekt2">
-                        Zu den Projektdetails...
+            <div class="portfolio_project box_shadow">
+                <div class="projectintro_image text-center">
+                    <img src="components/media/projectimages/adcampaign_neuer.jpg" class="img-fluid" width="200" alt="Portalbild 1">
+                </div>
+                <div class="intro_project">
+                    <p class="pf_text text-center">
+                        <h6 class="box_title">Landingpage for a restaurant's ad-campaign</h6>
+                    </p>
+                </div>
+                <div class="project_date">
+                    <a class="intro_projectdate">October 2024</a>
+                </div>
+                <button type="button" class="btn btn-primary mx-auto d-block" data-bs-toggle="modal" data-bs-target="#adcampaign_neuer">
+                        read more...
                 </button>
             </div>
-            <div class="portfolio_project">
-                <button type="button" class="btn btn-primary project1 mx-auto d-block" data-bs-toggle="modal" data-bs-target="#w4tourproject1">
-                        Zu den Projektdetails...
+            <div class="portfolio_project box_shadow">
+                <div class="projectintro_image text-center">
+                    <img src="components/media/projectimages/digseelescreen.png" class="img-fluid" width="200" alt="Portalbild 1">
+                </div>
+                <div class="intro_project">
+                    <p class="pf_text text-center">
+                        <h6 class="box_title">Redesign of Blog <a href="https://www.digitaleseele.at">Digitale Seele</a></h6>
+                    </p>
+                </div>
+                <div class="project_date">
+                    <a class="intro_projectdate">2024</a>
+                </div>
+                <button type="button" class="btn btn-primary mx-auto d-block" data-bs-toggle="modal" data-bs-target="#digseele2024">
+                        read more...
                 </button>
             </div>
-            <div class="portfolio_project">
-                <button type="button" class="btn btn-primary project1 mx-auto d-block" data-bs-toggle="modal" data-bs-target="#w4tourproject1">
-                        Zu den Projektdetails...
+            <div class="portfolio_project box_shadow">
+                <div class="projectintro_image text-center">
+                    <img src="components/media/projectimages/rest1_1.png" class="img-fluid" width="200" alt="Portalbild 1">
+                </div>
+                <div class="intro_project">
+                    <p class="pf_text text-center">
+                        <h6 class="box_title">Restaurant Website</h6>
+                    </p>
+                </div>
+                <div class="project_date">
+                    <a class="intro_projectdate">2023</a>
+                </div>
+                <button type="button" class="btn btn-primary mx-auto d-block" data-bs-toggle="modal" data-bs-target="#restaurant1">
+                        read more...
                 </button>
             </div>
-            <div class="portfolio_project">
-                <button type="button" class="btn btn-primary project1 mx-auto d-block" data-bs-toggle="modal" data-bs-target="#w4tourproject1">
-                        Zu den Projektdetails...
+            <div class="portfolio_project box_shadow">
+                <div class="projectintro_image text-center">
+                    <img src="components/media/projectimages/rest2_1.png" class="img-fluid" width="200" alt="Portalbild 1">
+                </div>
+                <div class="intro_project">
+                    <p class="pf_text text-center">
+                        <h6 class="box_title">Restaurant Website</h6>
+                    </p>
+                </div>
+                <div class="project_date">
+                    <a class="intro_projectdate">2023</a>
+                </div>
+                <button type="button" class="btn btn-primary mx-auto d-block" data-bs-toggle="modal" data-bs-target="#restaurant2">
+                        read more...
                 </button>
             </div>
-            <div class="portfolio_project">
-                <button type="button" class="btn btn-primary project1 mx-auto d-block" data-bs-toggle="modal" data-bs-target="#w4tourproject1">
-                        Zu den Projektdetails...
+            <div class="portfolio_project box_shadow">
+                <div class="projectintro_image text-center">
+                    <img src="components/media/projectimages/backend1.png" class="img-fluid" width="200" alt="Portalbild 1">
+                </div>
+                <div class="intro_project">
+                    <p class="pf_text text-center">
+                        <h6 class="box_title">Customer Backend</h6>
+                    </p>
+                </div>
+                <div class="project_date">
+                    <a class="intro_projectdate">2023</a>
+                </div>
+                <button type="button" class="btn btn-primary mx-auto d-block" data-bs-toggle="modal" data-bs-target="#customerbackend1">
+                        read more...
+                </button>
+            </div>
+            <div class="portfolio_project box_shadow">
+                <div class="projectintro_image text-center">
+                    <img src="components/media/projectimages/w4tour2.png" class="img-fluid" width="200" alt="Portalbild 1">
+                </div>
+                <div class="intro_project">
+                    <p class="pf_text text-center">
+                        <h6 class="box_title">Members' area for association</h6>
+                    </p>
+                </div>
+                <div class="project_date">
+                    <a class="intro_projectdate">2023/2024</a>
+                </div>
+                <button type="button" class="btn btn-primary mx-auto d-block" data-bs-toggle="modal" data-bs-target="#w4tourmembers1">
+                        read more...
+                </button>
+            </div>
+            <div class="portfolio_project box_shadow">
+                <div class="projectintro_image text-center">
+                    <img src="components/media/projectimages/sfrfoto1.jpeg" class="img-fluid" width="200" alt="Portalbild 1">
+                </div>
+                <div class="intro_project">
+                    <p class="pf_text text-center">
+                        <h6 class="box_title">SFR-Fotografie</h6>
+                    </p>
+                </div>
+                <div class="project_date">
+                    <a class="intro_projectdate">2024</a>
+                </div>
+                <button type="button" class="btn btn-primary mx-auto d-block" data-bs-toggle="modal" data-bs-target="#sfrfoto1">
+                        read more...
                 </button>
             </div>
         </div>
@@ -218,7 +314,7 @@
             <!-- Modal -->
             <div class="modal modal-lg fade" id="w4tourproject1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable">
-                    <div class="modal-content">
+                    <div class="modal-content ">
                         <div class="modal-header">
                             <h1 class="modal-title fs-5" id="staticBackdropLabel">Upgraded Version of the members' area of the association <a href="https://www.w4tour.at" target="_blank">w4tour</a></h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -284,32 +380,294 @@
             <!-- Modal zu aktuellsten w4tour-Mitgliederbereich-Projekt -->
              <!-- Modal zu aktuellsten Projekt 2 -->
             <!-- Modal -->
-            <div class="modal modal-lg fade" id="projekt2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal modal-lg fade" id="adcampaign_neuer" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Landingpage for a restaurant's ad-campaign (<a href="https://www.neuerwirt.at">www.neuerwirt.at)</a></h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            HAHAHAHAAHAHAHAHAHAHA Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam amet sed vero animi velit, voluptatum inventore quam, ipsum illo quaerat repellat aperiam explicabo rerum accusantium, alias ea totam temporibus quasi.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam amet sed vero animi velit, voluptatum inventore quam, ipsum illo quaerat repellat aperiam explicabo rerum accusantium, alias ea totam temporibus quasi.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam amet sed vero animi velit, voluptatum inventore quam, ipsum illo quaerat repellat aperiam explicabo rerum accusantium, alias ea totam temporibus quasi.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam amet sed vero animi velit, voluptatum inventore quam, ipsum illo quaerat repellat aperiam explicabo rerum accusantium, alias ea totam temporibus quasi.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam amet sed vero animi velit, voluptatum inventore quam, ipsum illo quaerat repellat aperiam explicabo rerum accusantium, alias ea totam temporibus quasi.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam amet sed vero animi velit, voluptatum inventore quam, ipsum illo quaerat repellat aperiam explicabo rerum accusantium, alias ea totam temporibus quasi.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam amet sed vero animi velit, voluptatum inventore quam, ipsum illo quaerat repellat aperiam explicabo rerum accusantium, alias ea totam temporibus quasi.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam amet sed vero animi velit, voluptatum inventore quam, ipsum illo quaerat repellat aperiam explicabo rerum accusantium, alias ea totam temporibus quasi.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam amet sed vero animi velit, voluptatum inventore quam, ipsum illo quaerat repellat aperiam explicabo rerum accusantium, alias ea totam temporibus quasi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam amet sed vero animi velit, voluptatum inventore quam, ipsum illo quaerat repellat aperiam explicabo rerum accusantium, alias ea totam temporibus quasi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam amet sed vero animi velit, voluptatum inventore quam, ipsum illo quaerat repellat aperiam explicabo rerum accusantium, alias ea totam temporibus quasi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam amet sed vero animi velit, voluptatum inventore quam, ipsum illo quaerat repellat aperiam explicabo rerum accusantium, alias ea totam temporibus quasi.
+                            <div class="projectimages">
+                                <img src="components/media/projectimages/adcampaign_neuer.jpg" class="w-100" alt="" />
+                            </div>
+                            <p class="pf_text_projects">
+                                <span class="bold_text">Objective</span>: Identifying and engaging  with potential customers who are interested in dining at the restaurant and reserving a MartiniGansl meal. 
+                            </p>
+                            <p class="pf_text_projects">
+                                <span class="bold_text">Project duration</span>: Several weeks
+                            </p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Understood</button>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Modal zu aktuellsten w4tour-Mitgliederbereich-Projekt -->
+             
+            <!-- Modal zu Digitale Seele 2024 -->
+            <!-- Modal -->
+            <div class="modal modal-lg fade" id="digseele2024" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">All new design of <a href="https://digitaleseele.at">www.digitaleseele.at</a></h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="projectimages">
+                                <img src="components/media/projectimages/digseelescreen.png" class="w-100" alt="" />
+                            </div>
+                            <p class="pf_text_projects">
+                                <span class="bold_text">Objective</span>: Designing a contemporary and exceptional version of the website of the online tech blog Digitale Seele, ensuring its accessibility on all mobile devices, personal computers, and laptops.
+                            </p>
+                            <p class="pf_text_projects">
+                                <span class="bold_text">Website</span>: <a href="https://digitaleseele.at">www.digitaleseele.at</a>
+                            </p>
+                            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active" data-bs-interval="4000">
+                                        <img src="components/media/projectimages/digseele2web.png" class="d-block w-100" alt="Portalbild 1">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="4000">
+                                        <img src="components/media/projectimages/digseelescreen.png" class="d-block w-100" alt="Portalbild 2">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="4000">
+                                        <img src="components/media/projectimages/digseele3web.png" class="d-block w-100" alt="Portalbild 3">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>  
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal zu Projekt Restaurant 1 -->
+            <!-- Modal -->
+            <div class="modal modal-lg fade" id="restaurant1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content ">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Website restaurant</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="projectimages">
+                                <img src="components/media/projectimages/rest1_1.png" class="w-100" alt="" />
+                            </div>
+                            <a class="pf_text_projects">
+                                <span class="bold_text">Goal</span>: A simple yet modern website for a restaurant that offers online table reservation and other features.
+                            </a>
+                            <br>
+                            <a class="pf_text_projects">
+                                <span class="bold_text">Project website</span>: <a href ="https://webdesign.digitaleseele.at/projects_portfolio/website1/">https://webdesign.digitaleseele.at/projects_portfolio/website1/</a>
+                            </a>
+                            <br>
+                            <br>
+                            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active" data-bs-interval="4000">
+                                        <img src="components/media/projectimages/rest1_1.png" class="d-block w-100" alt="Portalbild 1">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="4000">
+                                        <img src="components/media/projectimages/rest1_2.png" class="d-block w-100" alt="Portalbild 2">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal zu Projekt Restaurant 1 -->
+            <!-- Modal zu Projekt Restaurant 2 -->
+            <!-- Modal -->
+            <div class="modal modal-lg fade" id="restaurant2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content ">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Website restaurant</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="projectimages">
+                                <img src="components/media/projectimages/rest2_1.png" class="w-100" alt="" />
+                            </div>
+                            <a class="pf_text_projects">
+                                <span class="bold_text">Goal</span>: Another aesthetically pleasing restaurant website, albeit with a more rustic aesthetic.
+                            </a>
+                            <br>
+                            <a class="pf_text_projects">
+                                <span class="bold_text">Project website</span>: <a href ="https://webdesign.digitaleseele.at/projects_portfolio/website2/">https://webdesign.digitaleseele.at/projects_portfolio/website2/</a>
+                            </a>                          
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal zu Projekt Restaurant 2 -->
+             <!-- Modal zu Customer Backend 1 -->
+            <!-- Modal -->
+            <div class="modal modal-lg fade" id="customerbackend1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content ">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Website restaurant</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="projectimages">
+                                <img src="components/media/projectimages/backend1.png" class="w-100" alt="" />
+                            </div>
+                            <a class="pf_text_projects">
+                                <span class="bold_text">Goal</span>: Customers can access bills, contracts, and documents through a mobile-responsive website. Registered users can check recent bills and contracts, and download them as needed.
+
+                            </a>
+                            <br>
+                            <br>
+                            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active" data-bs-interval="4000">
+                                        <img src="components/media/projectimages/backend1.png" class="d-block w-100" alt="Portalbild 1">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="4000">
+                                        <img src="components/media/projectimages/backend2.png" class="d-block w-100" alt="Portalbild 2">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal zu Projekt Customer Backend 1 -->
+            <!-- Modal zu members' area 1 -->
+            <!-- Modal -->
+            <div class="modal modal-lg fade" id="w4tourmembers1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content ">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">w4tour</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="projectimages">
+                                <img src="components/media/projectimages/w4tour2.png" class="w-100" alt="" />
+                            </div>
+                            <a class="pf_text_projects">
+                                <span class="bold_text">Goal</span>: The website is mobile-responsive and provides comprehensive team management functionalities, enabling the seamless management of team members. Additionally, it offers a platform for downloading official documents and features an event photography gallery showcasing the association’s past events.
+                            </a>
+                            <br>
+                            <br>
+                            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active" data-bs-interval="4000">
+                                        <img src="components/media/projectimages/w4tour1.png" class="d-block w-100" alt="Portalbild 1">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="4000">
+                                        <img src="components/media/projectimages/w4tour2.png" class="d-block w-100" alt="Portalbild 2">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal zu Projekt members' area 1 -->
+            <!-- Modal zu Projekt SFR-Fotografie 1 -->
+            <!-- Modal -->
+            <div class="modal modal-lg fade" id="sfrfoto1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content ">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">All new design of <a href="https://sfr-fotografie.at">www.sfr-fotografie.at</a></h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="projectimages">
+                                <img src="components/media/projectimages/sfrfoto1.jpeg" class="w-100" alt="" />
+                            </div>
+                            <a class="pf_text_projects">
+                                <span class="bold_text">Goal</span>: The Photography online blog required a comprehensive redesign that prioritised modern aesthetics and responsiveness.
+                                <br>
+                                <span class="bold_text">Website</span>: <a href="https://sfr-fotografie.at">www.sfr-fotografie.at</a>.
+                            </a>
+                            <br>
+                            <br>
+                            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active" data-bs-interval="4000">
+                                        <img src="components/media/projectimages/sfrfoto2.jpg" class="d-block w-100" alt="Portalbild 1">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="4000">
+                                        <img src="components/media/projectimages/sfrfoto3.jpg" class="d-block w-100" alt="Portalbild 2">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="4000">
+                                        <img src="components/media/projectimages/sfrfoto4.jpg" class="d-block w-100" alt="Portalbild 2">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal zu Projekt SFR-Fotografie 1 -->
+
    </div>
    <div id="portfolio_aboutme">
         <div class="portfolio_title">

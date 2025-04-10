@@ -30,23 +30,40 @@
 }
 
 #portfolio_projects {
-  height: 100dvh;
-  background-color: bisque;
+  height: 200dvh;
 }
 #portfolio_projects #projects_area {
   margin: auto;
-  width: 100%;
-  height: 70dvh;
-  background-color: blue;
-  padding-left: 20px;
+  width: 90%;
+  height: 75dvh;
+  padding-top: 40px;
   display: grid;
-  grid-template-columns: 33.3% 33.3% 33.3%;
-  gap: 5px;
+  grid-template-columns: 49% 49%;
+  gap: 15px;
 }
 #portfolio_projects #projects_area .portfolio_project {
-  width: 85%;
-  border: 2px solid black;
-  height: 30dvh;
+  width: 100%;
+  min-height: 37dvh;
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 5px;
+  padding-bottom: 10px;
+}
+#portfolio_projects #projects_area .portfolio_project .projectintro_image {
+  grid-column: 1/span 1;
+}
+#portfolio_projects #projects_area .portfolio_project .intro_project {
+  grid-column: 1/span 1;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#portfolio_projects #projects_area .portfolio_project .project_date {
+  grid-column: 1/span 1;
+  text-align: center;
+  margin-top: -25px;
+}
+#portfolio_projects #projects_area .portfolio_project .project_readmore {
+  grid-column: 1/span 1;
 }
 
 #portfolio_offers {
@@ -55,10 +72,12 @@
 #portfolio_offers .offers_content {
   margin-left: auto;
   margin-right: auto;
-  width: 75%;
+  width: 100%;
   display: grid;
   grid-template-columns: 49% 49%;
   gap: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 #portfolio_offers .offers_content #box_fullstack {
   grid-column: 1/span 1;
@@ -71,7 +90,7 @@
 }
 
 #portfolio_myskills {
-  height: 100dvh;
+  height: 150dvh;
 }
 #portfolio_myskills .skills_content {
   display: grid;
@@ -79,7 +98,7 @@
   margin-right: auto;
   width: 75%;
   gap: 25px;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: 49% 49%;
 }
 #portfolio_myskills .skills_content .skillbox {
   width: 100%;
@@ -103,7 +122,7 @@
 }
 
 #portfolio_aboutme {
-  height: 100dvh;
+  height: 120dvh;
 }
 #portfolio_aboutme #pf_aboutarea {
   display: grid;
@@ -116,13 +135,14 @@
   grid-column: 1/span 1;
   padding: 10px;
   margin-top: 40px;
-  width: 92%;
+  width: 99%;
   margin-left: 10%;
-  height: 40dvh;
+  height: 50dvh;
   background: hsla(0, 17%, 93%, 0.65);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   z-index: 3;
+  overflow: scroll;
 }
 #portfolio_aboutme #pf_aboutarea #personal_image {
   grid-column: 2/span 1;
@@ -152,7 +172,7 @@
   z-index: 3;
   margin: auto;
   margin-top: 50px;
-  width: 50%;
+  width: 70%;
   padding: 10px;
   overflow: scroll;
 }
@@ -181,4 +201,340 @@
 /* ---- Modal Body ---- */
 .projectimages {
   padding-bottom: 15px !important;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  #portfolio_myskills {
+    height: 100dvh;
+  }
+  #portfolio_myskills .skills_content {
+    margin-left: 10%;
+    width: 75%;
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+  #portfolio_projects {
+    min-height: 100dvh;
+  }
+  #portfolio_projects #projects_area {
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    gap: 15px;
+  }
+  #portfolio_projects #projects_area .portfolio_project {
+    width: 100%;
+    min-height: 20dvh;
+  }
+  #portfolio_offers {
+    height: 100dvh;
+  }
+  #portfolio_offers .offers_content {
+    width: 85%;
+  }
+  #portfolio_aboutme {
+    height: 100dvh;
+  }
+  #portfolio_impressum {
+    height: 100dvh;
+  }
+  #portfolio_impressum #impressum_box {
+    width: 60%;
+  }
+  #portfolio_startscreen #pf_starttext2 {
+    position: absolute;
+    display: flex;
+    left: 20%;
+    top: 52%;
+  }
+}
+@media only screen and (max-width: 932px) and (orientation: landscape) {
+  #portfolio_projects {
+    min-height: 300dvh;
+  }
+  #portfolio_projects #projects_area {
+    height: 75dvh;
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+  }
+  #portfolio_projects #projects_area .portfolio_project {
+    width: 100%;
+    min-height: 80dvh;
+  }
+  #portfolio_offers {
+    height: 120dvh;
+  }
+  #portfolio_offers .offers_content {
+    width: 95%;
+  }
+  #portfolio_myskills {
+    height: 130dvh;
+  }
+  #portfolio_myskills .skills_content {
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    gap: 25px;
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+  #portfolio_myskills .skills_content .skillbox {
+    width: 100%;
+    border: 1px solid black;
+    height: 25dvh;
+    padding-left: 15px;
+    position: relative;
+  }
+  #portfolio_myskills .skills_content .skillbox .skill_image {
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+  }
+  #portfolio_myskills .skills_content .skillbox .skill_text {
+    padding-top: 2dvh;
+    margin: 0;
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+  }
+  #portfolio_aboutme {
+    height: 200dvh;
+  }
+  #portfolio_aboutme #pf_aboutarea {
+    display: grid;
+  }
+  #portfolio_aboutme #pf_aboutarea #personal_box {
+    width: 95%;
+    height: 80dvh;
+    overflow: scroll;
+  }
+  #portfolio_impressum {
+    height: 100dvh;
+  }
+  #portfolio_impressum #impressum_box {
+    height: 65dvh !important;
+    width: 60%;
+  }
+  #portfolio_startscreen #pf_starttext1 {
+    top: 40%;
+  }
+  #portfolio_startscreen #pf_starttext2 {
+    left: 20%;
+    top: 45%;
+  }
+  #portfolio_myskills {
+    height: 150dvh;
+  }
+  #portfolio_myskills .skills_content {
+    margin-left: 5%;
+    width: 75%;
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+}
+@media only screen and (min-width: 933px) and (max-width: 1194px) and (orientation: landscape) {
+  #portfolio_projects {
+    min-height: 300dvh;
+  }
+  #portfolio_projects #projects_area {
+    height: 30dvh;
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3% !important;
+    grid-auto-rows: 42dvh;
+    gap: 10px;
+  }
+  #portfolio_projects #projects_area .portfolio_project {
+    width: 100%;
+  }
+  #portfolio_offers {
+    height: 100dvh;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  #portfolio_offers .offers_content {
+    width: 75%;
+  }
+  #portfolio_aboutme {
+    height: 200dvh;
+  }
+  #portfolio_aboutme #pf_aboutarea {
+    display: grid;
+  }
+  #portfolio_aboutme #pf_aboutarea #personal_box {
+    width: 95%;
+    height: 40dvh !important;
+    overflow: scroll;
+  }
+  #portfolio_impressum {
+    height: 100dvh;
+  }
+  #portfolio_impressum #impressum_box {
+    width: 60%;
+  }
+  #portfolio_startscreen #pf_starttext2 {
+    left: 25%;
+    top: 52%;
+  }
+  #portfolio_myskills {
+    height: 100dvh;
+  }
+  #portfolio_myskills .skills_content {
+    margin-left: 10%;
+    width: 75%;
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 2048px) and (max-height: 2732px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  #portfolio_projects {
+    min-height: 100dvh;
+  }
+  #portfolio_projects #projects_area {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+  #portfolio_projects #projects_area .portfolio_project {
+    width: 100%;
+    min-height: auto !important;
+    height: 20dvh !important;
+  }
+  #portfolio_offers {
+    height: 100dvh;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  #portfolio_offers .offers_content {
+    width: 75%;
+  }
+  #portfolio_aboutme {
+    height: 200dvh;
+  }
+  #portfolio_aboutme #pf_aboutarea {
+    display: grid;
+  }
+  #portfolio_aboutme #pf_aboutarea #personal_box {
+    width: 95%;
+    height: 27dvh;
+    overflow: scroll;
+  }
+  #portfolio_impressum {
+    height: 100dvh;
+  }
+  #portfolio_impressum #impressum_box {
+    height: 50dvh;
+    width: 60%;
+  }
+  #portfolio_startscreen #pf_starttext2 {
+    position: absolute;
+    display: flex;
+    left: 25%;
+    top: 52%;
+  }
+  #portfolio_myskills {
+    height: 100dvh;
+  }
+  #portfolio_myskills .skills_content {
+    margin-left: 10%;
+    width: 75%;
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
+  #portfolio_projects {
+    min-height: 100dvh;
+  }
+  #portfolio_projects #projects_area {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+  #portfolio_projects #projects_area .portfolio_project {
+    width: 100%;
+    min-height: auto !important;
+    height: 30dvh !important;
+  }
+  #portfolio_offers {
+    height: 100dvh;
+  }
+  #portfolio_offers .offers_content {
+    width: 75%;
+  }
+  #portfolio_aboutme {
+    height: 200dvh;
+  }
+  #portfolio_aboutme #pf_aboutarea {
+    display: grid;
+  }
+  #portfolio_aboutme #pf_aboutarea #personal_box {
+    width: 95%;
+    height: 30dvh;
+    overflow: scroll;
+  }
+  #portfolio_impressum {
+    height: 100dvh;
+  }
+  #portfolio_impressum #impressum_box {
+    width: 60%;
+  }
+  #portfolio_startscreen #pf_starttext2 {
+    position: absolute;
+    display: flex;
+    left: 10%;
+    top: 52%;
+  }
+  #portfolio_myskills {
+    height: 100dvh;
+  }
+  #portfolio_myskills .skills_content {
+    margin-left: 10%;
+    width: 75%;
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+}
+@media only screen and (min-width: 1400px) { /* Medium Displays Landscape */
+  #portfolio_projects {
+    min-height: 100dvh;
+  }
+  #portfolio_projects #projects_area {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+  #portfolio_projects #projects_area .portfolio_project {
+    width: 100%;
+    min-height: auto !important;
+    height: 35dvh !important;
+  }
+  #portfolio_offers {
+    height: 100dvh;
+  }
+  #portfolio_offers .offers_content {
+    width: 75%;
+  }
+  #portfolio_aboutme {
+    height: 200dvh;
+  }
+  #portfolio_aboutme #pf_aboutarea {
+    display: grid;
+  }
+  #portfolio_aboutme #pf_aboutarea #personal_box {
+    width: 95%;
+    height: 35dvh;
+    overflow: scroll;
+  }
+  #portfolio_impressum {
+    height: 100dvh;
+  }
+  #portfolio_impressum #impressum_box {
+    width: 60%;
+  }
+  #portfolio_startscreen #pf_starttext2 {
+    position: absolute;
+    display: flex;
+    left: 10%;
+    top: 52%;
+  }
+  #portfolio_myskills {
+    height: 100dvh;
+  }
+  #portfolio_myskills .skills_content {
+    margin-left: 10%;
+    width: 75%;
+    grid-template-columns: 25% 25% 25% 25%;
+  }
 }/*# sourceMappingURL=portfolio_general.css.map */

@@ -13,7 +13,6 @@
   font-size: large;
   color: black;
   text-decoration: none;
-  text-transform: lowercase;
 }
 
 .pf_text_projects {
@@ -37,7 +36,7 @@
 }
 
 .box_title {
-  color: black;
+  color: blue;
   text-align: center;
   letter-spacing: 0.1em;
 }
@@ -81,4 +80,10 @@ a:link {
 
 .bold_text {
   font-weight: bold;
+}
+
+.intro_projectdate {
+  text-decoration: none;
+  color: darkgray;
+  font-size: medium;
 }/*# sourceMappingURL=portfolio_fonts.css.map */

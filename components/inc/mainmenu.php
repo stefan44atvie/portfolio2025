@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg fixed-top">
+<nav class="navbar navbar-expand-lg fixed-top bg-white">
   <div class="container-fluid">
     <a class="navbar-brand" href="#portfolio_startscreen">
         <img src="components/media/Logos/D&S_Logo_200x115.jpg" height="20px" alt="Logo" loading="lazy" />
