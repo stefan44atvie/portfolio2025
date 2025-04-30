@@ -1,13 +1,15 @@
 <?php 
-// ini_set(option: 'display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
-    include "components/inc/functions.php";
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);    
+
+include "components/inc/functions.php";
     
     // $mydate = "2025-09-02 20:35:00";
 
     // $mydateNew = DatumAusgabe($mydate);
     // $myTimeNew = TimeAusgabe($mydate);
+    include "components/inc/checklicence.php";
 
 ?>
 
@@ -35,7 +37,7 @@
  <!-- Google tag (gtag.js) -->
 
   <!-- Title -->
-  <title>My Agency 2025</title>
+  <title>My portfolio page</title>
 </head>
 <body class="genbody">
     <?php include('components/inc/mainmenu.php'); ?>

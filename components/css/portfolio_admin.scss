@@ -1,0 +1,51 @@
+* { padding: 0; margin: 0; }
+
+#login_screenwindow{
+    display: flex;
+    justify-content: center; /* Horizontal zentrieren */
+    padding-top:50px;
+
+    #login_area{
+        width:30dvw;
+        background-color: lightblue;
+        height:fit-content;
+        
+        .login_titlebox{
+            text-align: center;
+        }
+        .textbox{
+            text-align:center;
+        }
+        #portfolio_loginform{
+            display:grid;
+            padding-left:5px;
+            padding-right:5px;
+            padding-bottom:10px;
+            grid-template-columns: 49% 49%;;
+            gap:10px;
+            
+            #port_loginname{
+                grid-column: 1/span 1;
+            }
+            #port_password{
+                grid-column: 2/span 1;
+            }
+            #submit_loginbutton{
+                grid-column: 1/span 2;
+            }
+            #fehlermeldungen{
+                grid-column: 1/span 2;;
+            }
+        }
+    }
+}   
+
+/* ---- Dashboard.php ---- */
+.dasboard_menu{
+    height:9dvh;
+}
+#port_dashboard{
+    padding-left:10px;
+    padding-right:10px;
+    // padding-top: 30px;
+}

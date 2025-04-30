@@ -1,5 +1,38 @@
 * { padding: 0; margin: 0; }
 
+/* ---- FlashMessages ---- */
+.success { 
+    width:98%;
+    margin:auto;
+    margin-bottom:15px;
+    text-align: center;
+    padding: 10px; 
+    border-radius: 20px;
+    border:2px dashed green;
+    background-color: green;
+}
+.error { 
+    width:98%;
+    margin:auto;
+    margin-bottom:15px;
+    text-align: center;
+    padding: 10px; 
+    border-radius: 20px;
+    border:2px dashed red;
+    background-color: red;
+}
+.warning { 
+    width:98%;
+    margin:auto;
+    margin-bottom:15px;
+    text-align: center;
+    padding: 10px; 
+    border-radius: 20px;
+    border:2px dashed yellow;
+    background-color: yellow;
+}
+/* ---- FlashMessages ---- */
+
 #portfolio_startscreen{
     height:100dvh;
     width:100vw;

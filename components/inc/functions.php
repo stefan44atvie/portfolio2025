@@ -64,6 +64,16 @@
             return "Ungültige Eingabe";
         }
     }
+    function formatRefreshDate($create_date){
+        // $updateNewDatee = date("d.m.Y H:i", strtotime($rowAAF['update_date']));
+        $createNewDatee = date("d.m.Y, H:i:s", strtotime($create_date));
+
+        if (!empty($create_date)) {
+            return $createNewDatee;
+        } else {
+            return "Ungültige Eingabe";
+        }
+    }
 
     function formatCreateDateJD($create_date){
         // $updateNewDatee = date("d.m.Y H:i", strtotime($rowAAF['update_date']));
@@ -78,23 +88,23 @@
 
     function formatKundeVollNameCompany($vorname,$nachname, $firma){
         // Überprüfen, ob Vorname, Nachname und Firma angegeben sind
-      if (!empty($firstName) && !empty($lastName) && !empty($firma) ) {
-          return "$vorname $nachname ($firma)";
-      } elseif (!empty($vorname) && !empty($nachname) && !empty($firma)) {
-          return "$vorname $nachname ($firma)";
-      } else {
-          return "Ungültige Eingabe";
-      }
+        if (!empty($firstName) && !empty($lastName) && !empty($firma) ) {
+            return "$vorname $nachname ($firma)";
+        } elseif (!empty($vorname) && !empty($nachname) && !empty($firma)) {
+            return "$vorname $nachname ($firma)";
+        } else {
+            return "Ungültige Eingabe";
+        }
     }
     function formatKundeVollName($vorname,$nachname){
         // Überprüfen, ob Vorname, Nachname und Firma angegeben sind
-      if (!empty($firstName) && !empty($lastName) ) {
-          return "$vorname $nachname";
-      } elseif (!empty($vorname) && !empty($nachname)) {
-          return "$vorname $nachname";
-      } else {
-          return "Ungültige Eingabe";
-      }
+        if (!empty($firstName) && !empty($lastName) ) {
+            return "$vorname $nachname";
+        } elseif (!empty($vorname) && !empty($nachname)) {
+            return "$vorname $nachname";
+        } else {
+            return "Ungültige Eingabe";
+        }
     }
 
     /* ---- Dateigröße aus dem Dateisystem herausfiltern ---- */
@@ -128,27 +138,29 @@
     /* ---- FlashMessage-System für diverse Meldungen ---- */
     function setFlashMessage($type, $message) {
          // Sicherstellen, dass die Session gestartet wird
-    if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-    }
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
 
-    // Überprüfen, ob die 'flash_messages' in der Session existiert
-    if (!isset($_SESSION['flash_messages'])) {
-        $_SESSION['flash_messages'] = [];
-    }
+        // Überprüfen, ob die 'flash_messages' in der Session existiert
+        if (!isset($_SESSION['flash_messages'])) {
+            $_SESSION['flash_messages'] = [];
+        }
 
-    // Flash-Nachricht setzen
-    $_SESSION['flash_messages'][$type] = $message;
+        // Flash-Nachricht setzen
+        $_SESSION['flash_messages'][$type] = $message;
     }
         
     function getFlashMessage($type) {
-    session_start();
-    if (isset($_SESSION['flash_messages'][$type])) {
-        $msg = $_SESSION['flash_messages'][$type];
-        unset($_SESSION['flash_messages'][$type]);
-        return '<div class="' . $type . '">' . $msg . '</div>';
-    }
-        return '';
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+        if (isset($_SESSION['flash_messages'][$type])) {
+            $msg = $_SESSION['flash_messages'][$type];
+            unset($_SESSION['flash_messages'][$type]);
+            return '<div class="' . $type . '">' . $msg . '</div>';
+        }
+            return '';
     }
     /* ---- FlashMessage-System für diverse Meldungen ---- */
 
@@ -160,5 +172,14 @@
         $newTime = date("H:i", strtotime($getTime));
         return $newTime;
     }
+
+    /* ---- für Login etc. nützlich ---- */ 
+    function cleanInput ($param){
+        $clean = trim($param);
+        $clean = strip_tags($clean);
+        $clean = htmlspecialchars ($clean);
+        return $clean;
+    }
+    /* ---- für Login etc. nützlich ---- */ 
 
 ?>
