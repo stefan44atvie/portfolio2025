@@ -185,6 +185,22 @@ include "components/inc/functions.php";
         <div id="projects_area">
             <div class="portfolio_project box_shadow">
                 <div class="projectintro_image text-center">
+                    <img src="components/media/projectimages/crm1.jpg" class="img-fluid" width="200" alt="Portalbild 1">
+                </div>
+                <div class="intro_project">
+                    <p class="pf_text text-center">
+                        <h6 class="box_title">CRM - Project</h6>
+                    </p>
+                </div>
+                <div class="project_date">
+                    <a class="intro_projectdate">April 2025</a>
+                </div>
+                <button type="button" class="btn btn-primary mx-auto d-block" data-bs-toggle="modal" data-bs-target="#crmproject">
+                        read more...
+                </button>
+            </div>
+            <div class="portfolio_project box_shadow">
+                <div class="projectintro_image text-center">
                     <img src="components/media/projectimages/w4_25_1.jpg" class="img-fluid" width="200" alt="Portalbild 1">
                 </div>
                 <div class="intro_project">
@@ -669,6 +685,54 @@ include "components/inc/functions.php";
                 </div>
             </div>
             <!-- Modal zu Projekt SFR-Fotografie 1 -->
+
+            <!-- Modal zu CRM Project -->
+            <div class="modal modal-lg fade" id="crmproject" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">CRM - Project</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="projectimages">
+                                <img src="components/media/projectimages/crm1.jpg" class="w-100" alt="" />
+                            </div>
+                            <p class="pf_text_projects">
+                                <span class="bold_text">Objective</span>: During a period of introspection, the concept of developing a customised customer relationship management (CRM) tool for my own requirements emerged. I envisioned designing and implementing this tool entirely from scratch. My plan encompassed the creation of dedicated sections for managing customers, generating quotes, processing orders, and providing a download centre. The customer section would house all pertinent customer data, including name, address, email address, and a comprehensive order history. Conversely, the quotes section would serve as a repository for all my quotes, while the orders section would meticulously document the details of my customer projects.
+                            </p>
+                            <!-- <p class="pf_text_projects">
+                                <span class="bold_text">Website</span>: <a href="https://digitaleseele.at">www.digitaleseele.at</a>
+                            </p> -->
+                            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active" data-bs-interval="4000">
+                                        <img src="components/media/projectimages/crm2.jpg" class="d-block w-100" alt="Portalbild 1">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="4000">
+                                        <img src="components/media/projectimages/crm3.jpg" class="d-block w-100" alt="Portalbild 2">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="4000">
+                                        <img src="components/media/projectimages/crm4.jpg" class="d-block w-100" alt="Portalbild 3">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>  
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal zu CRM Project -->
 
    </div>
    <div id="portfolio_aboutme">

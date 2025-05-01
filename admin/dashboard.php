@@ -13,7 +13,7 @@
       }
 
      /* ---- Projektname/Version ---- */
-     $sql_settings = "select * from settings";
+     $sql_settings = "select * from portfolio_settings";
      $resSET = mysqli_query($connect,$sql_settings);
      $rowSET = mysqli_fetch_assoc($resSET);
      $projektname = $rowSET['projektname'];
@@ -55,7 +55,7 @@
         <?php include('inc/mainmenu_user.php'); ?>
     </div>
     <div id="port_dashboard">
-        <h1>Dashboard Portfolio 2025</h1>
+        <h1>Dashboard Portfolio Aktuell</h1>
         Servus, hier kannst du in aller Schnelle überprüfen, ob für das aktuelle Portfolio ein Update vorliegt, oder nicht. Sollte eines angezeigt werden, kannst du dies sofort installieren... Juhuu
         <?php echo $_SESSION['admin']; ?>
         <div id="updatecheck_text">

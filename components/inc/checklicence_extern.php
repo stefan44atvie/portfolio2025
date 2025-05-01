@@ -2,14 +2,18 @@
 
 /* ---- Robuste Lizenzprüfung ---- */
 
-$domain         = $_SERVER['HTTP_HOST'] ?? gethostname(); // Fallback für CLI
-$clientIp       = $_SERVER['SERVER_ADDR'] ?? getHostByName(gethostname());
-$licenceFile    = dirname(__DIR__, 1) . '/licences/licence.key';
-$lastCheckFile  = dirname(__DIR__, 1) . '/licences/last_check.txt';
-$checkInterval  = 3600;         // 1 Stunde
-$gracePeriod    = 86400 * 5;    // 5 Tage
+$domain       = $_SERVER['HTTP_HOST'] ?? gethostname(); 
+$clientIp     = $_SERVER['SERVER_ADDR'] ?? getHostByName(gethostname());
 
-// Debug-Logfunktion (optional)
+// Lokaler Pfad zur Lizenzdatei (eine Ebene über /components/scripts/)
+$basePath      = dirname(__DIR__, 2); // geht von /portfolio/components/scripts auf /portfolio
+$licenceFile   = $basePath . '/licences/licence.key';
+$lastCheckFile = $basePath . '/licences/last_check.txt';
+
+$checkInterval = 3600;         // 1 Stunde
+$gracePeriod   = 86400 * 5;    // 5 Tage
+
+// Logfunktion
 function logLicenceCheck($message) {
     $logfile = dirname(__DIR__, 2) . '/licences/licence_debug.log';
     @file_put_contents($logfile, "[" . date('c') . "] $message\n", FILE_APPEND);
@@ -33,22 +37,21 @@ if (empty($domain) || empty($key)) {
     die("❌ Fehlende Parameter für Lizenzprüfung.");
 }
 
-// Aktuelle Zeit
 $now = time();
 
-// Prüfen, ob das Prüfungsintervall überschritten wurde
+// Prüfintervall
 if (file_exists($lastCheckFile)) {
     $lastCheck = filemtime($lastCheckFile);
     if (($now - $lastCheck) < $checkInterval) {
-        return; // Noch innerhalb des Prüfintervalls
+        return; // Noch innerhalb des Intervalls
     }
 }
 
-// Lizenzserver kontaktieren
+// Lizenzserver anfragen
 $url = "https://webdesign.digitaleseele.at/projects/lizenzserver/lizenz_check.php?" . http_build_query([
     'domain'      => $domain,
     'key'         => $key,
-    'projektinfo' => 'Portfolio 2025 extern',
+    'projektinfo' => 'Portfolio Page 2025',
 ]);
 
 $ch = curl_init($url);
@@ -62,15 +65,17 @@ curl_close($ch);
 if ($response === false) {
     logLicenceCheck("❌ CURL-Fehler bei Anfrage an $url: $curlError");
 
-    // Toleranzzeit prüfen
     if (!file_exists($lastCheckFile) || ($now - filemtime($lastCheckFile)) > $gracePeriod) {
         die("❌ Lizenzprüfung fehlgeschlagen. Keine Verbindung zum Server.");
     } else {
-        return; // Innerhalb der Toleranz
+        return;
     }
 }
 
-// Antwort dekodieren
+echo "Raw Antwort vom Server:\n";
+var_dump($response);
+
+// Antwort auswerten
 $data = json_decode($response, true);
 if (!$data || !isset($data['status']) || strtolower($data['status']) !== 'aktiv') {
     $fehlermeldung = htmlspecialchars($data['message'] ?? 'Unbekannter Fehler');
@@ -84,5 +89,4 @@ if (!$data || !isset($data['status']) || strtolower($data['status']) !== 'aktiv'
 @file_put_contents($lastCheckFile, date('c'));
 logLicenceCheck("✅ Lizenz gültig für $domain");
 
-/* ---- Ende der Lizenzprüfung ---- */
 ?>

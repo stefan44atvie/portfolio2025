@@ -60,7 +60,7 @@ if ($zip->open($update_zip) === TRUE) {
 
     // Datenbankversion aktualisieren
     echo "📝 Aktualisiere Versionsnummer in der Datenbank...<br>";
-    $stmt = $connect->prepare("UPDATE settings SET site_version = ? WHERE id = 2");
+    $stmt = $connect->prepare("UPDATE portfolio_settings SET site_version = ? WHERE id = 3");
     $stmt->bind_param("s", $new_version);
     
     if ($stmt->execute()) {
