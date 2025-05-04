@@ -111,10 +111,10 @@
                     Logge dich mit deinem Benutzernamen und dem dazugehörigen Passwort ein</h1>
                 </p>
             </div>
-            <form class="w-100 " method="post" action="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']) ; ?>" autocomplete="off">
+            <form  method="post" action="<?php echo htmlspecialchars($_SERVER['SCRIPT_NAME']) ; ?>" autocomplete="off">
                 <div id="portfolio_loginform">
                     <div id="port_loginname">
-                        <input type="email" autocomplete="off" name="login_email" id="login_email" class="form-control me-1" placeholder="Ihre email-Addresse" value="<?php echo $email;?>">
+                        <input type="email" autocomplete="off" name="login_email" id="login_email" class="form-control me-1" placeholder="Ihre email-Addresse" placeholder = "Ihre email-Adresse">
                     </div>
                     <div id="port_password">
                         <input type="password" name="login_password" id="login_password" class="form-control" placeholder="Ihr Passwort" maxlength="64" />

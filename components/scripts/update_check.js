@@ -8,7 +8,7 @@ function checkForUpdates() {
         return;
     }
 
-    const url = `http://192.168.11.187/agency2025/components/api/api_updates.php?projekt=${projektname}&current_version=${current_version}`;
+    const url = `http://192.168.11.187/updateserver/components/api/api_updates.php?projekt=${projektname}&current_version=${current_version}`;
 
     fetch(url)
         .then(response => {

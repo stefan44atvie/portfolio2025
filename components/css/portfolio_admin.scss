@@ -21,20 +21,20 @@
             padding-left:5px;
             padding-right:5px;
             padding-bottom:10px;
-            grid-template-columns: 49% 49%;;
+            grid-template-columns: 100%;
             gap:10px;
             
             #port_loginname{
                 grid-column: 1/span 1;
             }
             #port_password{
-                grid-column: 2/span 1;
+                grid-column: 1/span 1;
             }
             #submit_loginbutton{
-                grid-column: 1/span 2;
+                grid-column: 1/span 1;
             }
             #fehlermeldungen{
-                grid-column: 1/span 2;;
+                grid-column: 1/span 1;
             }
         }
     }

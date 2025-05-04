@@ -55,9 +55,9 @@
         <?php include('inc/mainmenu_user.php'); ?>
     </div>
     <div id="port_dashboard">
-        <h1>Dashboard Portfolio Aktuell</h1>
-        Servus, hier kannst du in aller Schnelle überprüfen, ob für das aktuelle Portfolio ein Update vorliegt, oder nicht. Sollte eines angezeigt werden, kannst du dies sofort installieren... Juhuu
-        <?php echo $_SESSION['admin']; ?>
+        <h1>Dashboard Portfolio</h1>
+        Hallo! Hier kannst du sehen, ob es ein Update für dein aktuelles Portfolio gibt. Wenn eins verfügbar ist, kannst du es direkt installieren. Inkl. neuer Projekte fürs Portfolio natürlich 
+        <br>    
         <div id="updatecheck_text">
             <a class="standard_text">
                 <span class="bold_text">Version</span>: 
