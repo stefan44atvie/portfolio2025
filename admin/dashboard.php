@@ -56,20 +56,42 @@
     </div>
     <div id="port_dashboard">
         <h1>Dashboard Portfolio</h1>
-        Hallo! Hier kannst du sehen, ob es ein Update für dein aktuelles Portfolio gibt. Wenn eins verfügbar ist, kannst du es direkt installieren. Inkl. neuer Projekte fürs Portfolio natürlich 
+        Hallo! Hier kannst du sehen, ob es ein Update für dein aktuelles Portfolio gibt. Wenn eins verfügbar ist, kannst du es direkt installieren. Inkl. neuer Projekte fürs Portfolio natürlich  <button id="update-btn" class="btn btn-primary">Update prüfen</button>
+        <div class="update_page">
+                            <a class="dbox_text nosight">
+                                <span class="bold_text">Version</span>: 
+                                <span id="app-version" data-projektname="<?php echo $projektname; ?>" data-version="<?php echo $app_version; ?>">
+                                <?php echo $app_version; ?>
+                                </span>
+                                <button id="update-btn-warning" class="btn btn-sm btn-warning">🔄 Update</button>
+                            </a>
+                            <div id="update-status"></div>  
+                        </div>
         <br>    
-        <div id="updatecheck_text">
-            <a class="standard_text">
-                <span class="bold_text">Version</span>: 
-                <span id="app-version" data-projektname="<?php echo $projektname; ?>" data-version="<?php echo $app_version; ?>"><?php echo $app_version; ?> <span id="updateMessage"></span>
-                </span>
-            </a>       
+                                 <!-- Modal für UpdateMeldungen-->
+                                 <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="updateModalLabel">Update-Status</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="modal-body">
+                        <!-- Update-Nachricht wird hier angezeigt -->
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+                    <button type="button" id="reload-btn" class="btn btn-success" style="display:none;" onclick="location.reload()">🔁 Seite neu laden</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   <noscript>Your browser don't support JavaScript!</noscript>
   <script src="components/inc/menu_active.js"></script>
-  <script src="../components/scripts/update_check.js"></script>
+  <!-- <script src="../components/scripts/update_check.js"></script> -->
+  <script src="../components/scripts/check_update.js"></script>
 </body>
 </html>

@@ -189,6 +189,22 @@ include "components/inc/functions.php";
                 </div>
                 <div class="intro_project">
                     <p class="pf_text text-center">
+                        <h6 class="box_title">WebSite - Updateserver</h6>
+                    </p>
+                </div>
+                <div class="project_date">
+                    <a class="intro_projectdate">April 2025</a>
+                </div>
+                <button type="button" class="btn btn-primary mx-auto d-block" data-bs-toggle="modal" data-bs-target="#updateserverproject">
+                        read more...
+                </button>
+            </div>
+            <div class="portfolio_project box_shadow">
+                <div class="projectintro_image text-center">
+                    <img src="components/media/projectimages/crm1.jpg" class="img-fluid" width="200" alt="Portalbild 1">
+                </div>
+                <div class="intro_project">
+                    <p class="pf_text text-center">
                         <h6 class="box_title">CRM - Project</h6>
                     </p>
                 </div>
@@ -733,6 +749,35 @@ include "components/inc/functions.php";
                 </div>
             </div>
             <!-- Modal zu CRM Project -->
+
+            <!-- Modal zu Projekt UpdateServer -->
+            <!-- Modal -->
+            <div class="modal modal-lg fade" id="updateserverproject" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content ">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Website UpdateServer</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="projectimages">
+                                <img src="components/media/projectimages/rest2_1.png" class="w-100" alt="" />
+                            </div>
+                            <a class="pf_text_projects">
+                                <span class="bold_text">Goal</span>: Another aesthetically pleasing restaurant website, albeit with a more rustic aesthetic.
+                            </a>
+                            <br>
+                            <a class="pf_text_projects">
+                                <span class="bold_text">Project website</span>: <a href ="https://webdesign.digitaleseele.at/projects_portfolio/website2/">https://webdesign.digitaleseele.at/projects_portfolio/website2/</a>
+                            </a>                          
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal zu Projekt UpdateServer -->
 
    </div>
    <div id="portfolio_aboutme">

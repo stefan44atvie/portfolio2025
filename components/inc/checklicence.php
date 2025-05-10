@@ -7,5 +7,5 @@ $licenceFile = $_SERVER['DOCUMENT_ROOT'] . '/portfolio2025/licences/licence.key'
 $GLOBALS['projektinfo'] = $projektinfo;
 
 // Globale Datei einbinden, die die Lizenzprüfung übernimmt
-require_once '/var/www/html/lizenz_checker/components/inc/checklicencesGlobal.php';
+require_once 'http://192.168.3.44/components/inc/checklicencesGlobal.php';
 ?>
