@@ -9,7 +9,8 @@ include "components/inc/functions.php";
 
     // $mydateNew = DatumAusgabe($mydate);
     // $myTimeNew = TimeAusgabe($mydate);
-    include "components/inc/checklicence.php";
+    // include "components/inc/checklicence.php";
+    include "components/inc/check_remote_licence.php";
 
 ?>
 

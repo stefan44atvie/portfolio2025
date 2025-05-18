@@ -20,18 +20,21 @@ document.addEventListener('DOMContentLoaded', function () {
         const updateModal = new bootstrap.Modal(document.getElementById('updateModal'));
         updateModal.show();
 
-        // API zur Überprüfung auf Updates anfragen
-        fetch(`192.168.3.44/updateserver/components/api/api_updates.php?projekt=${encodeURIComponent(projektname)}&current_version=${encodeURIComponent(aktuelleVersion)}`)
+        // 🔧 Fester Pfad für Projektstruktur unter /portfolio2025
+        const basePath = "/portfolio2025";
+
+        // 🔍 Updateprüfung starten
+        fetch(`${basePath}/components/api/proxy_check_update.php?projekt=${encodeURIComponent(projektname)}&current_version=${encodeURIComponent(aktuelleVersion)}`)
             .then(response => response.json())
             .then(data => {
                 if (data.success && data.data.version !== aktuelleVersion) {
                     const neueVersion = data.data.version;
                     const downloadUrl = data.data.download_url;
 
-                    // Update starten
                     modalBody.innerHTML = `⬇️ Update auf Version ${neueVersion} wird gestartet...`;
 
-                    const installerUrl = `/portfolio2025/admin/inc/update_installer.php?projektname=${encodeURIComponent(projektname)}&version=${encodeURIComponent(neueVersion)}&download_url=${encodeURIComponent(downloadUrl)}`;
+                    // 🔧 Lokaler Pfad für Update-Installer
+                    const installerUrl = `${basePath}/admin/inc/update_installer.php?projektname=${encodeURIComponent(projektname)}&version=${encodeURIComponent(neueVersion)}&download_url=${encodeURIComponent(downloadUrl)}`;
 
                     fetch(installerUrl)
                         .then(r => r.text())
@@ -41,9 +44,9 @@ document.addEventListener('DOMContentLoaded', function () {
                             if (output.includes("Update erfolgreich")) {
                                 const reloadBtn = document.getElementById('reload-btn');
                                 if (reloadBtn) {
-                                    reloadBtn.style.display = 'inline-block'; // Zeige den Button zum Neuladen der Seite an
+                                    reloadBtn.style.display = 'inline-block';
                                     reloadBtn.addEventListener('click', () => {
-                                        location.reload(); // Seite neu laden
+                                        location.reload();
                                     });
                                 }
                             }

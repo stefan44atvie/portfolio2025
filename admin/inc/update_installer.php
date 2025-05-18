@@ -4,8 +4,27 @@ error_reporting(E_ALL);
 
 require_once '../../components/database/db_connect.php';
 
+function logUpdate($message) {
+    $logfile = __DIR__ . '/../../logs/update_log_' . date('Ymd') . '.log';
+    $timestamp = date('[Y-m-d H:i:s]');
+    file_put_contents($logfile, "$timestamp $message" . PHP_EOL, FILE_APPEND);
+}
+
+// Umgebung sicher erkennen
+function isLocalhost() {
+    $ip = $_SERVER['REMOTE_ADDR'] ?? '';
+    $host = $_SERVER['HTTP_HOST'] ?? '';
+    return in_array($ip, ['127.0.0.1', '::1']) ||
+           strpos($host, 'localhost') !== false ||
+           strpos($host, '192.168.') === 0;
+}
+
+$umgebung = isLocalhost() ? 'lokal' : 'web';
+logUpdate("🌍 Umgebung erkannt: $umgebung");
+
 // Parameter prüfen
-if (!isset($_GET['projektname']) || !isset($_GET['version']) || !isset($_GET['download_url'])) {
+if (!isset($_GET['projektname'], $_GET['version'], $_GET['download_url'])) {
+    logUpdate("❌ Ungültiger Aufruf – Parameter fehlen.");
     die("❌ Ungültiger Aufruf – Parameter fehlen.");
 }
 
@@ -13,68 +32,139 @@ $projektname = $_GET['projektname'];
 $new_version = $_GET['version'];
 $download_url = $_GET['download_url'];
 
-// Basisverzeichnis korrekt setzen (ein Verzeichnis über admin/)
-$base_dir = dirname(__DIR__, 2); // war: dirname(__DIR__)
+logUpdate("🔄 Starte Update: Projekt=$projektname | Version=$new_version");
 
-// Optional: Schutz vor Ausführung im falschen Projekt
-$expected_dir = strtolower(str_replace(' ', '', $projektname)); // "Agency 2025" → "agency2025"
-echo "DEBUG: basename(base_dir) = " . basename($base_dir) . "<br>";
-echo "DEBUG: expected_dir = " . $expected_dir . "<br>";
+// Projekt-Mappings
+$projekt_map_lokal = [
+    'Portfolio 2025' => 'portfolio2025',
+];
+$projekt_map_web = [
+    'Portfolio 2025' => 'portfolio',
+];
+$projekt_map = ($umgebung === 'lokal') ? $projekt_map_lokal : $projekt_map_web;
 
-// Stelle sicher, dass der Vergleich der Verzeichnisse auch bei Groß-/Kleinschreibung korrekt funktioniert
-if (strtolower(basename($base_dir)) !== $expected_dir) {
+if (!isset($projekt_map[$projektname])) {
+    logUpdate("❌ Unbekannter Projektname: $projektname");
+    die("❌ Unbekannter Projektname: $projektname");
+}
+
+// Verzeichnisse prüfen
+$base_dir = dirname(__DIR__, 2);
+$expected_dir = strtolower($projekt_map[$projektname]);
+$actual_dir = strtolower(basename($base_dir));
+
+logUpdate("📁 Base dir: $base_dir | Actual dir: $actual_dir | Expected dir: $expected_dir");
+
+if ($actual_dir !== $expected_dir) {
+    logUpdate("❌ Sicherheitsabbruch: Projektverzeichnis ($actual_dir) stimmt nicht mit erwartetem Namen ($expected_dir) überein.");
     die("❌ Sicherheitsabbruch: Projektverzeichnis stimmt nicht mit Projektnamen überein.");
 }
 
-// Installationsverzeichnis ermitteln
-// $installationsverzeichnis = $_SERVER['DOCUMENT_ROOT']; // Wurzelverzeichnis des Webservers
-// Alternativ (falls relative Pfade verwendet werden):
-$installationsverzeichnis = dirname(__DIR__, 2); // Für das Verzeichnis zwei Ebenen über admin/
+// Pfade setzen
+$update_zip = $base_dir . '/update/update.zip';
+$update_dir = $base_dir . '/';
+$backup_dir = $base_dir . '/backups/' . date('Ymd_His');
 
-echo "Installationsverzeichnis: $installationsverzeichnis<br>";
-
-// Zielpfade definieren
-$update_zip = $installationsverzeichnis . '/update/update.zip';
-$update_dir = $installationsverzeichnis . '/';
-$backup_dir = $installationsverzeichnis . '/backups/' . date('Ymd_His');
-
-// Sicherstellen, dass Updateverzeichnis existiert
-if (!is_dir(dirname($update_zip))) {
-    mkdir(dirname($update_zip), 0777, true);
-}
-
-// Update-Datei herunterladen
+// Ausgabe
+echo "Installationsverzeichnis: $base_dir<br>";
 echo "⬇️ Lade Update-Datei herunter...<br>";
+echo "Download-URL: $download_url<br>";
+
+if (!is_dir(dirname($update_zip))) mkdir(dirname($update_zip), 0777, true);
+
 $zipData = @file_get_contents($download_url);
-if (!$zipData) die("❌ Download fehlgeschlagen: Datei nicht gefunden oder Serverfehler.");
-
+if (!$zipData) {
+    logUpdate("❌ Fehler beim Herunterladen: $download_url");
+    die("❌ Download fehlgeschlagen: Datei nicht gefunden oder Serverfehler.");
+}
 file_put_contents($update_zip, $zipData);
+logUpdate("✅ ZIP erfolgreich heruntergeladen.");
 
-// Backup erstellen
+// Backup
 echo "📦 Erstelle Backup...<br>";
 if (!is_dir($backup_dir)) mkdir($backup_dir, 0777, true);
-@copy($installationsverzeichnis . '/config.php', $backup_dir . '/config.php');
+@copy($base_dir . '/config.php', $backup_dir . '/config.php');
+logUpdate("🗂 Backup erstellt: config.php");
 
-// ZIP entpacken
+// Entpacken
 $zip = new ZipArchive();
 if ($zip->open($update_zip) === TRUE) {
     echo "📂 Entpacke Update...<br>";
     $zip->extractTo($update_dir);
     $zip->close();
     unlink($update_zip);
+    logUpdate("✅ ZIP entpackt und gelöscht.");
 
-    // Versionsnummer aktualisieren
+    // Automatische Ersetzung bei Web-Umgebung für *_www.php und *_www.js Dateien
+    if ($umgebung === 'web') {
+        logUpdate("🌐 Starte automatische Ersetzung von *_www.php und *_www.js-Dateien in der Web-Umgebung...");
+
+        // Dateien mit *_www.php ersetzen
+        foreach (glob($base_dir . '/*_www.php') as $wwwFile) {
+            $normalFile = str_replace('_www.php', '.php', $wwwFile);
+            if (@copy($wwwFile, $normalFile)) {
+                logUpdate("🔁 Ersetzt: " . basename($normalFile) . " durch " . basename($wwwFile));
+                echo "🔁 Datei ersetzt: " . basename($normalFile) . " durch " . basename($wwwFile) . "<br>";
+            } else {
+                logUpdate("❌ Fehler beim Ersetzen von $normalFile");
+                echo "❌ Fehler beim Ersetzen von $normalFile<br>";
+            }
+        }
+
+        // Dateien mit *_www.js ersetzen
+        foreach (glob($base_dir . '/*_www.js') as $wwwFile) {
+            $normalFile = str_replace('_www.js', '.js', $wwwFile);
+            if (@copy($wwwFile, $normalFile)) {
+                logUpdate("🔁 Ersetzt: " . basename($normalFile) . " durch " . basename($wwwFile));
+                echo "🔁 Datei ersetzt: " . basename($normalFile) . " durch " . basename($wwwFile) . "<br>";
+            } else {
+                logUpdate("❌ Fehler beim Ersetzen von $normalFile");
+                echo "❌ Fehler beim Ersetzen von $normalFile<br>";
+            }
+        }
+    }
+
     echo "📝 Aktualisiere Versionsnummer...<br>";
-    $stmt = $connect->prepare("UPDATE portfolio_settings SET site_version = ? WHERE id = 3");
-    $stmt->bind_param("s", $new_version);
+
+    // Mapping DB-Update
+    $update_sql_map = [
+        'portfolio2025' => ['table' => 'portfolio_settings', 'id' => 3],
+        'portfolio'     => ['table' => 'portfolio_settings', 'id' => 3],
+    ];
+
+    $db_info = $update_sql_map[$expected_dir] ?? null;
+
+    if (!$db_info) {
+        logUpdate("❌ Kein SQL-Mapping für Projekt '$expected_dir'");
+        die("❌ Kein SQL-Mapping für dieses Projekt gefunden.");
+    }
+
+    $table = $db_info['table'];
+    $id = $db_info['id'];
+
+    $sql = "UPDATE `$table` SET site_version = ? WHERE id = ?";
+    $stmt = $connect->prepare($sql);
+
+    if (!$stmt) {
+        echo "❌ Fehler beim SQL-Prepare: " . $connect->error;
+        logUpdate("❌ SQL-Fehler beim Prepare: " . $connect->error);
+        die();
+    }
+
+    $stmt->bind_param("si", $new_version, $id);
+
     if ($stmt->execute()) {
         echo "<strong style='color:green;'>✅ Update erfolgreich auf Version: $new_version</strong><br>";
         echo "🎉 Das System ist nun aktuell.<br>";
+        logUpdate("✅ Versionsnummer in DB aktualisiert: $new_version");
     } else {
         echo "❌ Fehler beim Versionsupdate: " . $stmt->error;
+        logUpdate("❌ Datenbankfehler: " . $stmt->error);
     }
+
     $stmt->close();
 } else {
     echo "❌ ZIP-Fehler beim Entpacken!";
+    logUpdate("❌ Fehler beim Öffnen des ZIP-Archivs.");
 }
 ?>
