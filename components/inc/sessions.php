@@ -49,7 +49,7 @@ if (isset($_SESSION['last_activity'])) {
     if ($inactivity > 300) {
         session_unset();     // Alle Session-Variablen löschen
         session_destroy();   // Session beenden
-        header("Location: index.php"); // Nutzer zur Logout-Seite weiterleiten
+        header("Location: ../admin/index.php"); // Nutzer zur Logout-Seite weiterleiten
         exit();
     }
 }

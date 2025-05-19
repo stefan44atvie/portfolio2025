@@ -1,10 +1,10 @@
-<?php 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);    
+<p?php 
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);    
 
-include "components/inc/functions.php";
-    
+    include "components/inc/functions.php";
+        
     // $mydate = "2025-09-02 20:35:00";
 
     // $mydateNew = DatumAusgabe($mydate);
@@ -186,7 +186,7 @@ include "components/inc/functions.php";
         <div id="projects_area">
             <div class="portfolio_project box_shadow">
                 <div class="projectintro_image text-center">
-                    <img src="components/media/projectimages/crm1.jpg" class="img-fluid" width="200" alt="Portalbild 1">
+                    <img src="components/media/projectimages/update1.jpg" class="img-fluid" width="200" alt="Portalbild 1">
                 </div>
                 <div class="intro_project">
                     <p class="pf_text text-center">
@@ -762,15 +762,36 @@ include "components/inc/functions.php";
                         </div>
                         <div class="modal-body">
                             <div class="projectimages">
-                                <img src="components/media/projectimages/rest2_1.png" class="w-100" alt="" />
+                                <img src="components/media/projectimages/update1.jpg" class="w-100" alt="" />
                             </div>
-                            <a class="pf_text_projects">
-                                <span class="bold_text">Goal</span>: Another aesthetically pleasing restaurant website, albeit with a more rustic aesthetic.
-                            </a>
-                            <br>
-                            <a class="pf_text_projects">
-                                <span class="bold_text">Project website</span>: <a href ="https://webdesign.digitaleseele.at/projects_portfolio/website2/">https://webdesign.digitaleseele.at/projects_portfolio/website2/</a>
-                            </a>                          
+                            <p class="pf_text_projects">
+                                <span class="bold_text">Goal</span>: Managing and updating multiple web projects can be intricate. To streamline this process, I have created an update server specifically designed for my web design projects. This server facilitates the centralised management of various projects and their seamless updates with a mere few clicks. This not only optimises time management but also mitigates the risk of errors associated with manual updates.
+                            </p>
+                            <br>   
+                            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active" data-bs-interval="4000">
+                                        <img src="components/media/projectimages/update1.jpg" class="d-block w-100" alt="Portalbild 1">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="4000">
+                                        <img src="components/media/projectimages/update2.jpg" class="d-block w-100" alt="Portalbild 2">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="4000">
+                                        <img src="components/media/projectimages/update3.jpg" class="d-block w-100" alt="Portalbild 3">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="4000">
+                                        <img src="components/media/projectimages/update4.jpg" class="d-block w-100" alt="Portalbild 4">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>                      
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

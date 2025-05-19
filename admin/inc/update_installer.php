@@ -95,33 +95,42 @@ if ($zip->open($update_zip) === TRUE) {
     unlink($update_zip);
     logUpdate("✅ ZIP entpackt und gelöscht.");
 
-    // Automatische Ersetzung bei Web-Umgebung für *_www.php und *_www.js Dateien
+    // Automatische Ersetzung bei Web-Umgebung für *_www.php und *_www.js Dateien (rekursiv)
     if ($umgebung === 'web') {
-        logUpdate("🌐 Starte automatische Ersetzung von *_www.php und *_www.js-Dateien in der Web-Umgebung...");
+        logUpdate("🌐 Starte automatische Ersetzung rekursiv in der Web-Umgebung...");
+        echo "Dies ist die Web-Umgebung<br>";
 
-        // Dateien mit *_www.php ersetzen
-        foreach (glob($base_dir . '/*_www.php') as $wwwFile) {
-            $normalFile = str_replace('_www.php', '.php', $wwwFile);
-            if (@copy($wwwFile, $normalFile)) {
-                logUpdate("🔁 Ersetzt: " . basename($normalFile) . " durch " . basename($wwwFile));
-                echo "🔁 Datei ersetzt: " . basename($normalFile) . " durch " . basename($wwwFile) . "<br>";
-            } else {
-                logUpdate("❌ Fehler beim Ersetzen von $normalFile");
-                echo "❌ Fehler beim Ersetzen von $normalFile<br>";
+        function findFilesRecursive($dir, $suffix) {
+            $files = [];
+            $iterator = new RecursiveIteratorIterator(
+                new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS)
+            );
+            foreach ($iterator as $file) {
+                if ($file->isFile() && str_ends_with($file->getFilename(), $suffix)) {
+                    $files[] = $file->getPathname();
+                }
+            }
+            return $files;
+        }
+
+        function replaceWwwFiles($base_dir, $extension) {
+            $suffix = "_www.$extension";
+            $files = findFilesRecursive($base_dir, $suffix);
+
+            foreach ($files as $wwwFile) {
+                $targetFile = str_replace("_www.$extension", ".$extension", $wwwFile);
+                if (@copy($wwwFile, $targetFile)) {
+                    echo "🔁 Datei ersetzt: " . basename($targetFile) . " durch " . basename($wwwFile) . "<br>";
+                    logUpdate("🔁 Ersetzt: $targetFile durch $wwwFile");
+                } else {
+                    echo "❌ Fehler beim Ersetzen von $targetFile<br>";
+                    logUpdate("❌ Fehler beim Ersetzen von $targetFile");
+                }
             }
         }
 
-        // Dateien mit *_www.js ersetzen
-        foreach (glob($base_dir . '/*_www.js') as $wwwFile) {
-            $normalFile = str_replace('_www.js', '.js', $wwwFile);
-            if (@copy($wwwFile, $normalFile)) {
-                logUpdate("🔁 Ersetzt: " . basename($normalFile) . " durch " . basename($wwwFile));
-                echo "🔁 Datei ersetzt: " . basename($normalFile) . " durch " . basename($wwwFile) . "<br>";
-            } else {
-                logUpdate("❌ Fehler beim Ersetzen von $normalFile");
-                echo "❌ Fehler beim Ersetzen von $normalFile<br>";
-            }
-        }
+        replaceWwwFiles($base_dir, 'php');
+        replaceWwwFiles($base_dir, 'js');
     }
 
     echo "📝 Aktualisiere Versionsnummer...<br>";
