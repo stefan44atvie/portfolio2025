@@ -34,6 +34,7 @@
   <link rel="stylesheet" href="../components/css/portfolio_general.css">
   <link rel="stylesheet" href="../components/css/portfolio_fonts.css">
   <link rel="stylesheet" href="../components/css/portfolio_admin.css">
+  <link rel="stylesheet" href="../components/css/portfolio_updateprozess_fonts.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <!-- CSS Files Links -->
   <!-- Google tag (gtag.js) -->
@@ -81,7 +82,7 @@
                     </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
-                    <button type="button" id="reload-btn" class="btn btn-success" style="display:none;" onclick="location.reload()">🔁 Seite neu laden</button>
+                    <button type="button" id="reload-btn" class="btn btn-success" onclick="location.reload()">🔁 Seite neu laden</button>
                     </div>
                 </div>
             </div>
